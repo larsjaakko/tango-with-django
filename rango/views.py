@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from urlencode import encode
+from rango.urlencode import encode, decode
 
 from rango.models import Category
 from rango.models import Page

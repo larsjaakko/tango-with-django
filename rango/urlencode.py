@@ -11,6 +11,10 @@ def decode(encoded):
     return decoded
 
 URL = 'test_av_en_url'
+URLto = 'test av en url'
 
 print(URL)
 print(decode(URL))
+
+print(URLto)
+print(encode(URLto))
