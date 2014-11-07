@@ -89,7 +89,7 @@ def category(request, category_name_url):
     # Go render the response and return it to the client
     return render_to_response('rango/category.html', context_dict, context)
 
-
+@login_required
 def add_category(request):
     # A HTTP POST?
     if request.method == 'POST':
@@ -115,6 +115,7 @@ def add_category(request):
     return render(request, 'rango/add_category.html', {'form': form})
 
 
+@login_required
 def add_page(request, category_name_url):
 
     category_name = decode(category_name_url)
@@ -250,6 +251,7 @@ def user_login(request):
 
 @login_required
 def restricted(request):
+
     return HttpResponse("Since you're logged in, you can see this text!")
 
 
