@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Rango</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% load staticfiles %}
 
+{% block title %}{{ category_name }}{% endblock %}
+
+{% block body_block %}
     <h1>{{ category.name }}</h1>
     {% if category %}
         {% if pages %}
@@ -25,5 +24,5 @@
     {% else %}
         The specified category {{ category_name }} does not exist!
     {% endif %}
-</body>
-</html>
+
+{% endblock %}
