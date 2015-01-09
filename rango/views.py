@@ -252,7 +252,18 @@ def user_login(request):
 @login_required
 def restricted(request):
 
-    return HttpResponse("Since you're logged in, you can see this text!")
+    # Request the context of the request.
+    # The context contains information such as the client's machine details, for example.
+    context = RequestContext(request)
+
+    # Construct a dictionary to pass to the template engine as its context.
+    # Note the key boldmessage is the same as {{ boldmessage }} in the template!
+    context_dict = {}
+
+    # Return a rendered response to send to the client.
+    # We make use of the shortcut function to make our lives easier.
+    # Note that the first parameter is the template we wish to use.
+    return render_to_response('rango/restricted.html', context_dict, context)
 
 
 @login_required
