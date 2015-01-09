@@ -4,8 +4,14 @@
 
 {% block body_block %}
 
+    <div class="page-header">
     <h1>Business Cat says...</h1>
-    Hello world! <strong>{{ boldmessage }}</strong><br />
+    </div>
+
+    <div>
+    Hello world!
+    </div>
+    <strong>{{ boldmessage }}</strong><br />
     <a href="/rango/">Back to index</a><br />
     <img src="{% static "business-cat.jpg" %}" alt="A serious cat." />
 
